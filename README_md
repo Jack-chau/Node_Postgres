@@ -1,0 +1,60 @@
+# Node-Postgres
+
+This is a guide on how to use node-postgres to connect to and interact with a PostgreSQL database.
+
+## Prerequisites
+
+- Node.js installed on your machine
+- A PostgreSQL database with login credentials
+
+## Installation
+
+1. Install the `pg` package using npm:
+
+```
+npm install pg
+
+```
+
+1. Require the `pg` module in your Node.js file:
+
+```
+const { Client } = require('pg');
+
+```
+
+## Connecting to a Database
+
+1. Create a new client instance:
+
+```
+const client = new Client({
+  user: 'your-username',
+  host: 'your-host',
+  database: 'your-database',
+  password: 'your-password',
+  port: your-port,
+});
+
+```
+
+1. Connect to the database:
+
+```
+client.connect();
+
+```
+
+1. Use the client to execute SQL queries:
+
+```
+client.query('SELECT * FROM my_table', (err, res) => {
+  console.log(res.rows);
+  client.end();
+});
+
+```
+
+## Conclusion
+
+Node-Postgres is a powerful tool for interacting with PostgreSQL databases from a Node.js environment. With this guide, you should be able to get up and running quickly and start using the package to its full potential.
